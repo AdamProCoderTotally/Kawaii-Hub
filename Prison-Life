@@ -1,54 +1,105 @@
-if Game.PlaceId(155615604) then
-	local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+if game.PlaceId == 155615604 then
+	local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 	
-	local Window = WindUI:CreateWindow({
-		Title = "Kawaii Scriptz",
-		Author = "1441hz",
-		Size = UDim2.fromOffset(580, 460),
-		Transparent = false,
-		Theme = "Dark",
+	local Window = Rayfield:CreateWindow({
+	   Name = "Kawaii Hub",
+	   Icon = 0,
+	   LoadingTitle = "Kawaii Hub",
+	   LoadingSubtitle = "By 1441hz",
+	   ShowText = "Rayfield",
+	   Theme = "Default",
+	
+	   ToggleUIKeybind = "K",
+	
+	   DisableRayfieldPrompts = false,
+	   DisableBuildWarnings = false,
+	
+	   ConfigurationSaving = {
+	      Enabled = true,
+	      FolderName = "Kawaii Hub_Official",
+	      FileName = "Kawaii Hub"
+	   },
+	
+	   Discord = {
+	      Enabled = true,
+	      Invite = "fANbBf2Qqn", -- The Discord invite code, do not include Discord.gg/. E.g. Discord.gg/ABCD would be ABCD
+	      RememberJoins = true
+	   },
+	
+	   KeySystem = true, -- Set this to true to use our key system
+	   KeySettings = {
+	      Title = "Kawaii Hub | Key System",
+	      Subtitle = "By 1441hz",
+	      Note = "Join the discord for the key: discord.gg/fANbBf2Qqn",
+	      FileName = "KawaiiHubKeySystem",
+	      SaveKey = true,
+	      GrabKeyFromSite = false,
+	      Key = {"tempkey"}
+	   }
+	})
+	local TeleportsTab = Window:CreateTab("Teleports", nil)
+	local TeamsTab = Window:CreateTab("Teams", nil)
+	local GetItemTab = Window:CreateTab("Items", nil)
+	
+	Rayfield:Notify({
+	   Title = "Thank you!",
+	   Content = "You now have access to Kawaii Hub,\nThanks for joining us!\n\nNOTE: If you paid for this script, you are being scammed.",
+	   Duration = 6.5,
 	})
 	
-	local Teleports = Window:Tab({
-		Title = "Main",
-	})
 	
-	Teleports:Button({
-		Title = "Shotgun TP (wip)",
-	    Callback = function()
+	--Teleports
+	
+	
+	
+	-- Get Items
+	local GetItemShotgun = GetItemTab:CreateButton({
+	   Name = "Shotgun",
+	   Callback = function()
 			local CurrentPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(820, 95, 2230)
-			wait(0.75)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(820, 95.3, 2229)
+			wait(0.5)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(CurrentPosition)
-	    end,
+	   end,
 	})
-	Teleports:Button({
-		Title = "MP5 TP (wip)",
-	    Callback = function()
+	local GetItemMP5 = GetItemTab:CreateButton({
+	   Name = "MP5",
+	   Callback = function()
 			local CurrentPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(814, 95, 2229)
-			wait(0.75)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(814, 95.3, 2230)
+			wait(0.5)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(CurrentPosition)
-	    end,
+	   end,
 	})
-	Teleports:Button({
-		Title = "Join Inmate Team",
-	    Callback = function()
+	
+	-- Team Switching
+	local InmatesSwitch = TeamsTab:CreateButton({
+	   Name = "Inmates",
+	   Callback = function()
 			local Event = game:GetService("ReplicatedStorage").Remotes.RequestTeamChange
 			Event:InvokeServer(game:GetService("Teams").Neutral,1)
 			wait(1)
 			local Event = game:GetService("ReplicatedStorage").Remotes.RequestTeamChange
 			Event:InvokeServer(game:GetService("Teams").Inmates,1)
-	    end,
+	   end,
 	})
-	Teleports:Button({
-		Title = "Join Guards Team",
-	    Callback = function()
+	local GuardsSwitch = TeamsTab:CreateButton({
+	   Name = "Guards",
+	   Callback = function()
 			local Event = game:GetService("ReplicatedStorage").Remotes.RequestTeamChange
 			Event:InvokeServer(game:GetService("Teams").Neutral,1)
 			wait(1)
 			local Event = game:GetService("ReplicatedStorage").Remotes.RequestTeamChange
 			Event:InvokeServer(game:GetService("Teams").Guards,1)
-	    end,
+	   end,
 	})
-end
+	local NeutralSwitch = TeamsTab:CreateButton({
+	   Name = "Menu",
+	   Callback = function()
+			local Event = game:GetService("ReplicatedStorage").Remotes.RequestTeamChange
+			Event:InvokeServer(game:GetService("Teams").Neutral,1)
+	   end,
+	})
+	Rayfield:LoadConfiguration()
+else
+	loadstring(game:HttpGet(""))()
