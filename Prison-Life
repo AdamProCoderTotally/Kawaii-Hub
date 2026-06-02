@@ -103,3 +103,4 @@ if game.PlaceId == 155615604 then
 	Rayfield:LoadConfiguration()
 else
 	loadstring(game:HttpGet(""))()
+end
