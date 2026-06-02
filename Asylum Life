@@ -1,0 +1,63 @@
+if game.PlaceId == 132352755769957 then
+  local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+  
+  local Window = Rayfield:CreateWindow({
+     Name = "Kawaii Hub",
+     Icon = 0,
+     LoadingTitle = "Kawaii Hub",
+     LoadingSubtitle = "By 1441hz",
+     ShowText = "Rayfield",
+     Theme = "Default",
+  
+     ToggleUIKeybind = "K",
+  
+     DisableRayfieldPrompts = false,
+     DisableBuildWarnings = false,
+  
+     ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "Kawaii Hub_Official",
+        FileName = "Kawaii Hub"
+     },
+  
+     Discord = {
+        Enabled = true,
+        Invite = "fANbBf2Qqn", -- The Discord invite code, do not include Discord.gg/. E.g. Discord.gg/ABCD would be ABCD
+        RememberJoins = true
+     },
+  
+     KeySystem = true, -- Set this to true to use our key system
+     KeySettings = {
+        Title = "Kawaii Hub | Key System",
+        Subtitle = "By 1441hz",
+        Note = "Join the discord for the key: discord.gg/fANbBf2Qqn",
+        FileName = "KawaiiHubKeySystem",
+        SaveKey = true,
+        GrabKeyFromSite = false,
+        Key = {"tempkey"}
+     }
+  })
+  Rayfield:Notify({
+     Title = "Thank you!",
+     Content = "You now have access to Kawaii Hub,\nThanks for joining us!\n\nNOTE: If you paid for this script, you are being scammed.",
+     Duration = 6.5,
+  })
+  local TeamsTab = Window:CreateTab("Teams", nil)
+  
+  -- Team Switching
+  local PatientSwitch = TeamsTab:CreateButton({
+     Name = "Patient",
+     Callback = function()
+          local Event = game:GetService("ReplicatedStorage").Remote.TeamChange
+          Event:InvokeServer(game:GetService("Teams").PATIENT,"Patient")
+     end,
+  })
+  local MedicalSwitch = TeamsTab:CreateButton({
+     Name = "Medical",
+     Callback = function()
+          local Event = game:GetService("ReplicatedStorage").Remote.TeamChange
+          Event:InvokeServer(game:GetService("Teams").MEDICAL,"Medical")
+     end,
+  })
+else
+  loadstring(game:HttpGet("")
