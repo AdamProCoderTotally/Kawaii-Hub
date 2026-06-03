@@ -43,6 +43,7 @@ local Window = Rayfield:CreateWindow({
 local TeleportsTab = Window:CreateTab("Teleports", nil)
 local TeamsTab = Window:CreateTab("Teams", nil)
 local GetItemTab = Window:CreateTab("Items", nil)
+local MiscFunctionsTab = Window:CreateTab("Items", nil)
 	
 Rayfield:Notify({
 	Title = "Thank you!",
@@ -105,6 +106,15 @@ local NeutralSwitch = TeamsTab:CreateButton({
 	Callback = function()
 		local Event = game:GetService("ReplicatedStorage").Remotes.RequestTeamChange
 		Event:InvokeServer(game:GetService("Teams").Neutral,1)
+	end,
+})
+
+-- Misc Tab
+local JoinVcServer = MiscFunctionsTab:CreateButton({
+	Name = "Join VC",
+	Callback = function()
+		local Event = game:GetService("ReplicatedStorage").Remotes.VoiceTeleportRequested
+		Event:FireServer()
 	end,
 })
 Rayfield:LoadConfiguration()
