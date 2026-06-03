@@ -47,4 +47,150 @@ Rayfield:Notify({
 	Duration = 6.5,
 })
 
-local VenusTab = Window:CreateTab("Teleports", nil)
+-- Tab Creators
+local MainAutomationTab = Window:CreateTab("Main", nil)
+local SpeedUpgradesTab = Window:CreateTab("Speed", nil)
+local MercuryTab = Window:CreateTab("Mercury", nil)
+
+
+-- Main Tab
+local AutoClicking = MainAutomationTab:CreateToggle({
+   Name = "Auto Clicker",
+   CurrentValue = false,
+   Flag = "AutoClicking", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoClicking = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoClicking == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.PlayerClick
+					Event:FireServer()
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
+
+-- Speed Tab
+local AutoGlobalAcceleration = SpeedUpgradesTab:CreateToggle({
+   Name = "Auto Global-Acceleration",
+   CurrentValue = false,
+   Flag = "AutoGlobalAcc", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoGlobalAcc = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoGlobalAcc == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.BuySpeedUpgrade
+					Event:FireServer("GlobalAcceleration")
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
+local AutoExpoMultiplier = SpeedUpgradesTab:CreateToggle({
+   Name = "Auto Expo-Multiplier",
+   CurrentValue = false,
+   Flag = "AutoExpoMulti", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoExpoMulti = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoExpoMulti == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.BuySpeedUpgrade
+					Event:FireServer("ExponentialMultiplier")
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
+local AutoClickBoost = SpeedUpgradesTab:CreateToggle({
+   Name = "Auto Click-Boost",
+   CurrentValue = false,
+   Flag = "AutoClickBoost", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoClickBoost = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoClickBoost == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.BuySpeedUpgrade
+					Event:FireServer("ClickBoost")
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
+
+-- Mercury Tab
+local AutoMercuryAcc = MercuryTab:CreateToggle({
+   Name = "Auto Mercury-Acceleration",
+   CurrentValue = false,
+   Flag = "AutoMercuryAcc", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoMercuryAcc = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoMercuryAcc == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.BuyPlanetUpgrade
+					Event:FireServer(1)
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
+local AutoMercuryOut = MercuryTab:CreateToggle({
+   Name = "Auto Mercury-Output",
+   CurrentValue = false,
+   Flag = "AutoMercuryOut", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoMercuryOut = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoMercuryOut == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.BuyPlanetOutput
+					Event:FireServer(1)
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
+local AutoMercuryEff = MercuryTab:CreateToggle({
+   Name = "Auto Mercury-Efficiency",
+   CurrentValue = false,
+   Flag = "AutoMercuryEff", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoMercuryEff = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoMercuryEff == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.BuyPlanetEfficiency
+					Event:FireServer(1)
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
+local AutoMercuryMas = MercuryTab:CreateToggle({
+   Name = "Auto Mercury-Mastery",
+   CurrentValue = false,
+   Flag = "AutoMercuryMas", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   isAutoMercuryMas = Value
+   		if Value then
+			task.spawn(function()
+				while isAutoMercuryMas == true do
+					local Event = game:GetService("ReplicatedStorage").GameData.BuyPlanetMastery
+					Event:FireServer(1)
+					wait(0.05)
+				end
+		   end)
+		end
+   end,
+})
