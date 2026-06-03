@@ -43,7 +43,7 @@ local Window = Rayfield:CreateWindow({
 local TeleportsTab = Window:CreateTab("Teleports", nil)
 local TeamsTab = Window:CreateTab("Teams", nil)
 local GetItemTab = Window:CreateTab("Items", nil)
-local MiscFunctionsTab = Window:CreateTab("Items", nil)
+local MiscFunctionsTab = Window:CreateTab("Misc", nil)
 	
 Rayfield:Notify({
 	Title = "Thank you!",
