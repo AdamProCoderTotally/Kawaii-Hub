@@ -1,4 +1,4 @@
-if game.PlaceId ~= 155615604 or game.PlaceId == 135564683255158 then
+if game.PlaceId ~= 155615604 or game.PlaceId ~= 135564683255158 then
     print("failed")
     return
 end
