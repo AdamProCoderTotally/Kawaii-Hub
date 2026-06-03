@@ -25,11 +25,11 @@ local Window = Rayfield:CreateWindow({
 	
 	Discord = {
 	    Enabled = true,
-	    Invite = "fANbBf2Qqn", -- The Discord invite code, do not include Discord.gg/. E.g. Discord.gg/ABCD would be ABCD
+	    Invite = "fANbBf2Qqn",
 	    RememberJoins = true
 	},
 
-	KeySystem = true, -- Set this to true to use our key system
+	KeySystem = true,
 	KeySettings = {
 	    Title = "Kawaii Hub | Key System",
 	    Subtitle = "By 1441hz",
