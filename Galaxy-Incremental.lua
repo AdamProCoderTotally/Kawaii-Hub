@@ -1,7 +1,11 @@
+if game.PlaceId ~= 128977538229607 then
+    print("github error")
+    return
+end
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-	Name = "Kawaii Hub",
+	Name = "Kawaii Hub | Galaxy Incremental",
 	Icon = 0,
 	LoadingTitle = "Kawaii Hub",
 	LoadingSubtitle = "By 1441hz",
@@ -16,7 +20,7 @@ local Window = Rayfield:CreateWindow({
 	ConfigurationSaving = {
 	    Enabled = true,
 	    FolderName = "Kawaii Hub_Official",
-	    FileName = "Kawaii Hub"
+	    FileName = "Kawaii_Hub_Prison_Life"
 	},
 	
 	Discord = {
