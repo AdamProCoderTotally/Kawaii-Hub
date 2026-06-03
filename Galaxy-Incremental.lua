@@ -6,7 +6,7 @@ local HubVersion = 0.1
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-	Name = "Kawaii Hub | Galaxy Incremental",
+	Name = "Kawaii Hub | Galaxy Incremental V{HubVersion}",
 	Icon = 0,
 	LoadingTitle = "Kawaii Hub",
 	LoadingSubtitle = "By 1441hz",
