@@ -117,4 +117,3 @@ local JoinVcServer = MiscFunctionsTab:CreateButton({
 		Event:FireServer()
 	end,
 })
-Rayfield:LoadConfiguration()
