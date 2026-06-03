@@ -1,5 +1,5 @@
 if game.PlaceId ~= 155615604 and game.PlaceId ~= 135564683255158 then
-    print("failed")
+    print("github error")
     return
 end
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
