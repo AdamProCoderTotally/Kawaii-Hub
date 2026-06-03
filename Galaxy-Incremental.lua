@@ -2,6 +2,7 @@ if game.PlaceId ~= 128977538229607 then
     print("github error")
     return
 end
+local HubVersion = 0.1
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -31,7 +32,7 @@ local Window = Rayfield:CreateWindow({
 
 	KeySystem = true, -- Set this to true to use our key system
 	KeySettings = {
-	    Title = "Kawaii Hub | Key System",
+	    Title = "Kawaii Hub | Key System V{HubVersion}",
 	    Subtitle = "By 1441hz",
 	    Note = "Join the discord for the key: discord.gg/fANbBf2Qqn",
 	    FileName = "KawaiiHubKeySystem",
@@ -39,6 +40,11 @@ local Window = Rayfield:CreateWindow({
 	    GrabKeyFromSite = false,
 	    Key = {"tempkey"}
 	}
+})
+Rayfield:Notify({
+	Title = "Thank you!",
+	Content = "You now have access to Kawaii Hub,\nThanks for joining us!\n\nNOTE: If you paid for this script, you are being scammed.",
+	Duration = 6.5,
 })
 
 local TeleportsTab = Window:CreateTab("Teleports", nil)
