@@ -40,3 +40,5 @@ local Window = Rayfield:CreateWindow({
 	    Key = {"tempkey"}
 	}
 })
+
+local TeleportsTab = Window:CreateTab("Teleports", nil)
