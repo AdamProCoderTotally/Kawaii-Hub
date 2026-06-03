@@ -49,7 +49,11 @@ Rayfield:Notify({
 	Content = "You now have access to Kawaii Hub,\nThanks for joining us!\n\nNOTE: If you paid for this script, you are being scammed.",
 	Duration = 6.5,
 })
-	
+Rayfield:Notify({
+	Title = "Warning",
+	Content = "Version 0.1 teleports are detected if you use them constantly (spamming them), Sorry!",
+	Duration = 6.5,
+})
 	
 --Teleports
 	
