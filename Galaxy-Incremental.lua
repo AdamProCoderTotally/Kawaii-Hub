@@ -6,7 +6,7 @@ local HubVersion = 0.1
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-	Name = "Kawaii Hub | Galaxy Incremental V{HubVersion}",
+	Name = "Kawaii Hub | Galaxy Incremental",
 	Icon = 0,
 	LoadingTitle = "Kawaii Hub",
 	LoadingSubtitle = "By 1441hz",
@@ -32,7 +32,7 @@ local Window = Rayfield:CreateWindow({
 
 	KeySystem = true, -- Set this to true to use our key system
 	KeySettings = {
-	    Title = "Kawaii Hub | Key System V{HubVersion}",
+	    Title = "Kawaii Hub | Key System",
 	    Subtitle = "By 1441hz",
 	    Note = "Join the discord for the key: discord.gg/fANbBf2Qqn",
 	    FileName = "KawaiiHubKeySystem",
@@ -47,4 +47,4 @@ Rayfield:Notify({
 	Duration = 6.5,
 })
 
-local TeleportsTab = Window:CreateTab("Teleports", nil)
+local VenusTab = Window:CreateTab("Teleports", nil)
