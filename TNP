@@ -1,4 +1,4 @@
-if game.PlaceId ~= 537413528 then
+if game.PlaceId ~= 74241999080347 then
   print("Github Issue")
   return
 end
