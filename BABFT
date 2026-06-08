@@ -38,7 +38,7 @@ end
   	    FileName = "KawaiiHubKeySystem",
   	    SaveKey = true,
   	    GrabKeyFromSite = false,
-  	    Key = {"tempkey"}
+  	    Key = {"RELEASE"}
   	}
   })
   Rayfield:Notify({
