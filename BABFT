@@ -1,0 +1,108 @@
+if game.PlaceId ~= 155615604 then
+  print("Github Issue")
+else
+  local HubVersion = 0.1
+  local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+  
+  local Window = Rayfield:CreateWindow({
+  	Name = "Kawaii Hub | BABFT",
+  	Icon = 0,
+  	LoadingTitle = "Kawaii Hub",
+  	LoadingSubtitle = "By 1441hz",
+  	ShowText = "Rayfield",
+  	Theme = "Default",
+  	
+  	ToggleUIKeybind = "K",
+  	
+  	DisableRayfieldPrompts = false,
+  	DisableBuildWarnings = false,
+  	
+  	ConfigurationSaving = {
+  	    Enabled = true,
+  	    FolderName = "Kawaii Hub_Official",
+  	    FileName = "Kawaii_Hub_Prison_Life"
+  	},
+  	
+  	Discord = {
+  	    Enabled = true,
+  	    Invite = "fANbBf2Qqn", -- The Discord invite code, do not include Discord.gg/. E.g. Discord.gg/ABCD would be ABCD
+  	    RememberJoins = true
+  	},
+  
+  	KeySystem = true, -- Set this to true to use our key system
+  	KeySettings = {
+  	    Title = "Kawaii Hub | Key System",
+  	    Subtitle = "By 1441hz",
+  	    Note = "Join the discord for the key: discord.gg/fANbBf2Qqn",
+  	    FileName = "KawaiiHubKeySystem",
+  	    SaveKey = true,
+  	    GrabKeyFromSite = false,
+  	    Key = {"tempkey"}
+  	}
+  })
+  Rayfield:Notify({
+  	Title = "Thank you!",
+  	Content = "You now have access to Kawaii Hub,\nThanks for joining us!\n\nNOTE: If you paid for this script, you are being scammed.",
+  	Duration = 6.5,
+  })
+  Rayfield:Notify({
+  	Title = "Alert",
+  	Content = "To stop the auto-farm V1, please rejoin!",
+  	Duration = 6.5,
+  })
+  
+  local MainAutoTab = Window:CreateTab("Main", nil)
+  
+  local AutoFarmSetup = MainAutoTab:CreateButton({
+     Name = "Farm Set-up (required)",
+     Callback = function()
+     		local position = 1600
+  		local part = Instance.new("Part")
+  		part.Size = Vector3.new(100, 10, 2048)
+  		part.Position = Vector3.new(-50, 40, position)
+  		part.Velocity = Vector3.new(0, 0, 500)
+  		part.Anchored = true
+  		part.Parent = workspace
+  		local part = Instance.new("Part")
+  		part.Size = Vector3.new(100, 10, 2048)
+  		part.Position = Vector3.new(-50, 40, (position + (2048*1)))
+  		part.Velocity = Vector3.new(0, 0, 500)
+  		part.Anchored = true
+  		part.Parent = workspace
+  		local part = Instance.new("Part")
+  		part.Size = Vector3.new(100, 10, 2048)
+  		part.Position = Vector3.new(-50, 40, (position + (2048*2)))
+  		part.Velocity = Vector3.new(0, 0, 500)
+  		part.Anchored = true
+  		part.Parent = workspace
+  		local part = Instance.new("Part")
+  		part.Size = Vector3.new(100, 10, 2048)
+  		part.Position = Vector3.new(-50, 40, (position + (2048*3)))
+  		part.Velocity = Vector3.new(0, 0, 500)
+  		part.Anchored = true
+  		part.Parent = workspace
+  		game.Workspace.BoatStages.NormalStages.TheEnd.WaterfallEnd:Destroy()
+     end,
+  })
+  local AutoFarming = MainAutoTab:CreateToggle({
+     Name = "Auto-Farm",
+     CurrentValue = false,
+     Flag = "AutoFarming", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+     Callback = function(Value)
+     isAutoFarming = Value
+     		if Value then
+  			task.spawn(function()
+  				while isAutoFarming == true do
+  					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-50, 50, 900)
+  					wait(16)
+  					game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+  					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-60, -363, 9489)
+  					game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+  					wait(1)
+  					game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+  					wait(18)
+  				end
+  		   end)
+  		end
+     end,
+  })
