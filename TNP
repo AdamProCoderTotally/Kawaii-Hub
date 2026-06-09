@@ -93,7 +93,7 @@ local AutoRebirth = MainAutomationTab:CreateToggle({
    end,
 })
 local AutoFix = MainAutomationTab:CreateToggle({
-   Name = "Auto Fix-After-Nuke",
+   Name = "Auto Fix-After-Nuke (WIP)",
    CurrentValue = true,
    Flag = "AutoFix",
    Callback = function(Value)
